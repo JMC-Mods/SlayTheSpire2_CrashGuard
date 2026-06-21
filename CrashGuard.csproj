@@ -9,6 +9,7 @@
 
     <!-- Mod 基础信息 -->
     <ModName>$(MSBuildProjectName)</ModName>
+    <ModDisplayName>CrashGuard</ModDisplayName>
     <Author>JMC</Author>
 
     <!-- 路径配置 -->
@@ -61,7 +62,7 @@
 config_version=5
 
 [application]
-config/name="$(ModName)"
+config/name="$(ModDisplayName)"
       </ProjectGodotText>
     </PropertyGroup>
 <WriteLinesToFile File="$(ModLocalDir)\project.godot" Lines="$(ProjectGodotText)" Overwrite="false" Encoding="ASCII" Condition="!Exists('$(ModLocalDir)\project.godot')" />
@@ -102,10 +103,10 @@ texture_format/etc2=false
       <ManifestText>
 {
     "id": "$(ModName)",
-    "name": "$(ModName)",
+    "name": "$(ModDisplayName)",
     "author": "$(Author)",
     "version": "1.0.0",
-    "description": "$(ModName) Description",
+    "description": "$(ModDisplayName) Description",
     "has_pck": true,
     "has_dll": true,
     "dependencies": ["JmcModLib"],

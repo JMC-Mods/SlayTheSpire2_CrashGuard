@@ -1,0 +1,17 @@
+{
+  "id": "CrashGuard",
+  "name": "CrashGuard",
+  "author": "JMC",
+  "version": "1.1.10",
+  "description": "尝试规避 BaseLib 的闪退问题；有问题反馈 B 站 JMC丶或者 Github，二次分发请注明来源",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [
+    {
+      "id": "JmcModLib",
+      "min_version": "1.4.0"
+    }
+  ],
+  "affects_gameplay": false,
+  "min_game_version": "0.107.1"
+}

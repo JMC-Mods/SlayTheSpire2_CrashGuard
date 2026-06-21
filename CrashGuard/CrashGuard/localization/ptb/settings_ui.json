@@ -1,0 +1,7 @@
+{
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "Janela de log do BaseLib",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "Modo de protecao da janela de log do BaseLib",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "Desativar a atualizacao e a opcao mais segura. Preservar a atualizacao mantem a janela de log do BaseLib mostrando novos logs, mas pula o corte de logs antigos que pode travar em RichTextLabel.RemoveParagraph.",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "Desativar atualizacao da janela de log do BaseLib",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Preservar atualizacao, pular corte de logs antigos (experimental)"
+}

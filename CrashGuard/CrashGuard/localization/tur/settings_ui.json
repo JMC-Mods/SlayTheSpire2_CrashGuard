@@ -1,0 +1,7 @@
+{
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "BaseLib gunluk penceresi",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "BaseLib gunluk penceresi koruma modu",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "Yenilemeyi kapatmak en guvenli secenektir. Yenilemeyi korumak BaseLib gunluk penceresinin yeni kayitlari gostermeye devam etmesini saglar, ancak RichTextLabel.RemoveParagraph icinde cokmeye yol acabilen eski kayit budamasini atlar.",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "BaseLib gunluk penceresi yenilemeyi kapat",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Yenilemeyi koru, eski kayit budamasini atla (deneysel)"
+}

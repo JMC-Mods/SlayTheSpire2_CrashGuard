@@ -1,0 +1,7 @@
+{
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "BaseLib-Protokollfenster",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "Schutzmodus fuer das BaseLib-Protokollfenster",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "Das Deaktivieren der Aktualisierung ist am sichersten. Mit beibehaltener Aktualisierung zeigt das BaseLib-Protokollfenster weiter neue Logs, ueberspringt aber das Trimmen alter Logs, das RichTextLabel.RemoveParagraph abstuerzen lassen kann.",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "Aktualisierung des BaseLib-Protokollfensters deaktivieren",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Aktualisierung behalten, Trimmen alter Logs ueberspringen (experimentell)"
+}
