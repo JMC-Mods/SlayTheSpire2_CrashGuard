@@ -1,3 +1,6 @@
+[h1] Special Notice [/h1]
+[b] If your saves disappear after installing mods, subscribe to [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3747533700] BetterSaveSlots [/url], then click the Import button on the save slot to fix it. Please disable any save-path merging mods before using it. [/b]
+
 [h1] Experimental Fix for Crashes (CrashGuard) [/h1]
 [h2] 1. Overview [/h2]
 Recently, someone in the group reported extremely frequent game crashes. Initial debugging suggests that the issue is related to BaseLib's log trimming, while the further upstream cause may be related to Godot controls. This MOD is an experimental attempt to fix that crash issue.

@@ -1,3 +1,6 @@
+[h1] 特别提醒 [/h1]
+[b] 如果你打MOD后发现存档消失，订阅 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3747533700] BetterSaveSlots [/url] 后在存档槽点击导入按钮解决，使用前请禁用存档路径合并MOD [/b]
+
 [h1] 游戏闪退的尝试性修复（CrashGuard） [/h1]
 [h2] 1. 简介 [/h2]
 最近有群友向我反馈游戏超高频繁闪退，初步调试定位发现和 BaseLib 的日志裁剪部分有关，更上游的原因可能与 Godot 的控件有关，于是做了这么一个 MOD 尝试修复这个闪退问题。
