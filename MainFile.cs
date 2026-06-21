@@ -21,7 +21,15 @@ public partial class MainFile : Node
 
         Harmony harmony = new(VersionInfo.Name);
         harmony.PatchAll(Assembly.GetExecutingAssembly());
-        CrashGuard.Patches.BaseLibLogWindowCrashGuardPatch.ApplyWhenAvailable(harmony);
+        try
+        {
+            CrashGuard.Patches.BaseLibLogWindowCrashGuardPatch.ApplyWhenAvailable(harmony);
+        }
+        catch (Exception ex)
+        {
+            ModLogger.Error($"安装 BaseLib 日志窗口防崩补丁失败，已跳过该补丁以避免 MOD 加载失败：{ex}");
+        }
+
         ModLogger.Info("Harmony 补丁已应用。");
     }
 }

@@ -75,10 +75,17 @@ internal static class BaseLibLogWindowCrashGuardPatch
                     continue;
                 }
 
-                HarmonyMethod? transpiler = methodName == "UpdateText"
+                HarmonyMethod? transpiler = methodName == "UpdateText" && CanPatchParagraphRemoval()
                     ? new HarmonyMethod(typeof(BaseLibLogWindowCrashGuardPatch), nameof(ReplaceDangerousParagraphRemoval))
                     : null;
-                harmony.Patch(method, prefix, transpiler: transpiler);
+                try
+                {
+                    harmony.Patch(method, prefix, transpiler: transpiler);
+                }
+                catch (Exception ex)
+                {
+                    ModLogger.Error($"安装 BaseLib 日志窗口方法 {LogWindowTypeName}.{methodName} 的防崩补丁失败，已跳过该方法：{ex}");
+                }
             }
 
             applied = true;
@@ -101,6 +108,36 @@ internal static class BaseLibLogWindowCrashGuardPatch
         }
 
         return false;
+    }
+
+    private static bool CanPatchParagraphRemoval()
+    {
+        if (RemoveParagraphMethod == null)
+        {
+            ModLogger.Warn("未找到 RichTextLabel.RemoveParagraph(int)，跳过 BaseLib 日志窗口旧日志裁剪替换补丁。");
+            return false;
+        }
+
+        ParameterInfo[] replacementParameters = SafeRemoveParagraphMethod.GetParameters();
+        ParameterInfo[] originalParameters = RemoveParagraphMethod.GetParameters();
+        bool compatible =
+            SafeRemoveParagraphMethod.ReturnType == RemoveParagraphMethod.ReturnType
+            && replacementParameters.Length == originalParameters.Length + 1
+            && replacementParameters[0].ParameterType.IsAssignableFrom(RemoveParagraphMethod.DeclaringType)
+            && replacementParameters
+                .Skip(1)
+                .Select(parameter => parameter.ParameterType)
+                .SequenceEqual(originalParameters.Select(parameter => parameter.ParameterType));
+
+        if (!compatible)
+        {
+            ModLogger.Warn(
+                $"RichTextLabel.RemoveParagraph 签名与安全替代方法不兼容，跳过 BaseLib 日志窗口旧日志裁剪替换补丁。" +
+                $" 原方法：{RemoveParagraphMethod.ReturnType.Name} RemoveParagraph({string.Join(", ", originalParameters.Select(parameter => parameter.ParameterType.Name))})；" +
+                $" 替代方法：{SafeRemoveParagraphMethod.ReturnType.Name} SafeRemoveParagraph({string.Join(", ", replacementParameters.Select(parameter => parameter.ParameterType.Name))})。");
+        }
+
+        return compatible;
     }
 
     private static IEnumerable<CodeInstruction> ReplaceDangerousParagraphRemoval(IEnumerable<CodeInstruction> instructions)
@@ -127,12 +164,11 @@ internal static class BaseLibLogWindowCrashGuardPatch
         }
     }
 
-    private static void SafeRemoveParagraph(RichTextLabel label, int paragraph)
+    private static bool SafeRemoveParagraph(RichTextLabel label, int paragraph)
     {
         if (!CrashGuardSettings.ShouldSkipBaseLibLogWindowParagraphTrim)
         {
-            label.RemoveParagraph(paragraph);
-            return;
+            return label.RemoveParagraph(paragraph);
         }
 
         if (!warnedParagraphTrimSkipped)
@@ -140,5 +176,7 @@ internal static class BaseLibLogWindowCrashGuardPatch
             warnedParagraphTrimSkipped = true;
             ModLogger.Warn("已跳过 BaseLib 日志窗口旧日志裁剪，保留刷新但避免 RichTextLabel.RemoveParagraph 原生崩溃。");
         }
+
+        return false;
     }
 }
