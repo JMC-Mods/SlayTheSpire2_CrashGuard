@@ -1,0 +1,13 @@
+{
+  "title": "CrashGuard",
+  "description": "尝试规避 BaseLib 的闪退问题；有问题反馈 B 站 JMC丶或者 Github，二次分发请注明来源",
+  "visibility": "public",
+  "changeNote": "修复在 BaseLib v3.3.1 环境下可能加载失败的问题。",
+  "tags": [
+    "Utility",
+    "QoL"
+  ],
+  "dependencies": [
+    3747526103
+  ]
+}
