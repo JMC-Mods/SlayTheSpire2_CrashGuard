@@ -11,3 +11,12 @@ permissions:
 jobs:
   release:
     uses: JMC2002/STS2_Mods_Actions/.github/workflows/release-mod.yml@main
+
+  publish-quark:
+    needs: release
+    uses: JMC2002/STS2_Mods_Actions/.github/workflows/publish-quark.yml@main
+    with:
+      version_info_path: Core/VersionInfo.cs
+      mod_path: CrashGuard
+    secrets:
+      quark_cookie: ${{ secrets.QUARK_COOKIE }}
