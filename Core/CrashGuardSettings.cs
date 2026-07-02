@@ -10,6 +10,7 @@ public static class CrashGuardSettings
     public const string PreserveRefreshMode = "保留刷新，仅跳过旧日志裁剪（实验）";
 
     private const string LogWindowGroup = "BaseLib 日志窗口";
+    private const string CommandGuardGroup = "指令防崩";
     private const string LogWindowProtectionModeKey = "baselib_log_window.mode";
     private const string LogWindowProtectionConfigKey = $"{LogWindowGroup}.{LogWindowProtectionModeKey}";
 
@@ -21,6 +22,15 @@ public static class CrashGuardSettings
         Key = LogWindowProtectionModeKey,
         Order = 10)]
     public static string LogWindowProtectionMode = DisableRefreshMode;
+
+    [UIToggle]
+    [Config(
+        "跳过无效治疗指令",
+        group: CommandGuardGroup,
+        Description = "跳过 CreatureCmd.Heal 的空目标或 0/负数治疗，避免其他 MOD 的治疗补丁链处理无意义治疗时闪退。关闭后完全放行原治疗逻辑。",
+        Key = "creature_heal.skip_noop",
+        Order = 10)]
+    public static bool SkipNoOpCreatureHeal = true;
 
     public static void NormalizeStoredValues()
     {
@@ -44,6 +54,8 @@ public static class CrashGuardSettings
 
     public static string CurrentLogWindowProtectionMode =>
         NormalizeLogWindowProtectionMode(LogWindowProtectionMode);
+
+    public static bool ShouldSkipNoOpCreatureHeal => SkipNoOpCreatureHeal;
 
     private static string NormalizeLogWindowProtectionMode(string? mode)
     {

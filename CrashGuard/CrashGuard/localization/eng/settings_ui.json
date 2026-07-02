@@ -1,7 +1,10 @@
 {
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "BaseLib Log Window",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.指令防崩": "Command Crash Guards",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "BaseLib log window protection mode",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "Disabling refresh is the safest option. Preserving refresh keeps BaseLib's log window updating, but skips the old-log trimming that can crash in RichTextLabel.RemoveParagraph.",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "Disable BaseLib log window refresh",
-  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Preserve refresh, skip old-log trimming (experimental)"
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Preserve refresh, skip old-log trimming (experimental)",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.NAME": "Skip no-op heal commands",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "Skips CreatureCmd.Heal calls with a null target or zero/negative amount so other mods' heal patch chains do not crash while handling meaningless heals. When disabled, the original heal logic is fully allowed."
 }

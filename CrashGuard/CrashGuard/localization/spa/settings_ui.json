@@ -1,7 +1,10 @@
 {
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "Ventana de registro de BaseLib",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.指令防崩": "Command Crash Guards",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "Modo de proteccion de la ventana de registro de BaseLib",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "Desactivar la actualizacion es la opcion mas segura. Conservar la actualizacion mantiene al dia la ventana de registro de BaseLib, pero omite el recorte de registros antiguos que puede bloquear RichTextLabel.RemoveParagraph.",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "Desactivar actualizacion de la ventana de registro de BaseLib",
-  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Conservar actualizacion, omitir recorte de registros antiguos (experimental)"
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Conservar actualizacion, omitir recorte de registros antiguos (experimental)",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.NAME": "Skip no-op heal commands",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "Skips CreatureCmd.Heal calls with a null target or zero/negative amount so other mods' heal patch chains do not crash while handling meaningless heals. When disabled, the original heal logic is fully allowed."
 }
