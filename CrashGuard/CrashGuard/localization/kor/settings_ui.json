@@ -1,10 +1,13 @@
 {
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "BaseLib 로그 창",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.指令防崩": "Command Crash Guards",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.MOD_兼容修复": "Mod compatibility fixes",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "BaseLib 로그 창 보호 모드",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "새로 고침을 끄는 것이 가장 안전합니다. 새로 고침을 유지하면 BaseLib 로그 창은 계속 새 로그를 표시하지만, RichTextLabel.RemoveParagraph 충돌을 일으킬 수 있는 오래된 로그 정리를 건너뜁니다.",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "BaseLib 로그 창 새로 고침 끄기",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "새로 고침 유지, 오래된 로그 정리만 건너뛰기 (실험적)",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.NAME": "Skip no-op heal commands",
-  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "Skips CreatureCmd.Heal calls with a null target or zero/negative amount so other mods' heal patch chains do not crash while handling meaningless heals. When disabled, the original heal logic is fully allowed."
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "Skips CreatureCmd.Heal calls with a null target or zero/negative amount so other mods' heal patch chains do not crash while handling meaningless heals. When disabled, the original heal logic is fully allowed.",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.sentry.native_shutdown_guard.NAME": "Skip native Sentry shutdown",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.sentry.native_shutdown_guard.DESCRIPTION": "Skips the native Sentry GDExtension shutdown call when the game disables reporting during modded startup, avoiding startup-stage native crashes on affected game versions. When disabled, the original game shutdown path is allowed when possible."
 }

@@ -1,10 +1,13 @@
 {
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "BaseLib 日志窗口",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.指令防崩": "指令防崩",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.MOD_兼容修复": "MOD 兼容修复",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "BaseLib 日志窗口保护模式",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "禁用刷新最稳；保留刷新会让 BaseLib 日志窗口继续显示新日志，但会跳过触发闪退的旧日志裁剪。",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "禁用 BaseLib 日志窗口刷新",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "保留刷新，仅跳过旧日志裁剪（实验）",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.NAME": "跳过无效治疗指令",
-  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "跳过 CreatureCmd.Heal 的空目标或 0/负数治疗，避免其他 MOD 的治疗补丁链处理无意义治疗时闪退。关闭后完全放行原治疗逻辑。"
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "跳过 CreatureCmd.Heal 的空目标或 0/负数治疗，避免其他 MOD 的治疗补丁链处理无意义治疗时闪退。关闭后完全放行原治疗逻辑。",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.sentry.native_shutdown_guard.NAME": "跳过 Sentry 原生关闭",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.sentry.native_shutdown_guard.DESCRIPTION": "在游戏因检测到 MOD 而关闭上报时，跳过 Sentry GDExtension 的原生 shutdown 调用，规避部分版本在启动阶段的原生闪退。关闭后尽量放行游戏原逻辑。"
 }

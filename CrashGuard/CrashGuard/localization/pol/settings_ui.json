@@ -1,10 +1,13 @@
 {
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.BaseLib_日志窗口": "Okno dziennika BaseLib",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.指令防崩": "Command Crash Guards",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.GROUP.MOD_兼容修复": "Mod compatibility fixes",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.NAME": "Tryb ochrony okna dziennika BaseLib",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.DESCRIPTION": "Wylaczenie odswiezania jest najbezpieczniejsze. Zachowanie odswiezania pozwala oknu dziennika BaseLib dalej pokazywac nowe wpisy, ale pomija przycinanie starych wpisow, ktore moze wysypac RichTextLabel.RemoveParagraph.",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.禁用_BaseLib_日志窗口刷新": "Wylacz odswiezanie okna dziennika BaseLib",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.baselib_log_window.mode.OPTION.保留刷新，仅跳过旧日志裁剪（实验）": "Zachowaj odswiezanie, pomin przycinanie starych wpisow (eksperymentalne)",
   "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.NAME": "Skip no-op heal commands",
-  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "Skips CreatureCmd.Heal calls with a null target or zero/negative amount so other mods' heal patch chains do not crash while handling meaningless heals. When disabled, the original heal logic is fully allowed."
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.creature_heal.skip_noop.DESCRIPTION": "Skips CreatureCmd.Heal calls with a null target or zero/negative amount so other mods' heal patch chains do not crash while handling meaningless heals. When disabled, the original heal logic is fully allowed.",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.sentry.native_shutdown_guard.NAME": "Skip native Sentry shutdown",
+  "EXTENSION.JMCMODLIB.CONFIG.CrashGuard.sentry.native_shutdown_guard.DESCRIPTION": "Skips the native Sentry GDExtension shutdown call when the game disables reporting during modded startup, avoiding startup-stage native crashes on affected game versions. When disabled, the original game shutdown path is allowed when possible."
 }

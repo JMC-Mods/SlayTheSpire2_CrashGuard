@@ -2,7 +2,7 @@
   "id": "CrashGuard",
   "name": "CrashGuard",
   "author": "JMC",
-  "version": "1.1.14",
+  "version": "1.1.15",
   "description": "尝试规避 BaseLib 的闪退问题；有问题反馈 B 站 JMC丶或者 Github，二次分发请注明来源",
   "has_pck": true,
   "has_dll": true,

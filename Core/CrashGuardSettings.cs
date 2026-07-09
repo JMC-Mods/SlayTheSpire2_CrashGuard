@@ -11,6 +11,7 @@ public static class CrashGuardSettings
 
     private const string LogWindowGroup = "BaseLib 日志窗口";
     private const string CommandGuardGroup = "指令防崩";
+    private const string ModCompatibilityGroup = "MOD 兼容修复";
     private const string LogWindowProtectionModeKey = "baselib_log_window.mode";
     private const string LogWindowProtectionConfigKey = $"{LogWindowGroup}.{LogWindowProtectionModeKey}";
 
@@ -31,6 +32,15 @@ public static class CrashGuardSettings
         Key = "creature_heal.skip_noop",
         Order = 10)]
     public static bool SkipNoOpCreatureHeal = true;
+
+    [UIToggle]
+    [Config(
+        "跳过 Sentry 原生关闭",
+        group: ModCompatibilityGroup,
+        Description = "在游戏因检测到 MOD 而关闭上报时，跳过 Sentry GDExtension 的原生 shutdown 调用，规避部分版本在启动阶段的原生闪退。关闭后尽量放行游戏原逻辑。",
+        Key = "sentry.native_shutdown_guard",
+        Order = 10)]
+    public static bool GuardSentryNativeShutdown = true;
 
     public static void NormalizeStoredValues()
     {
@@ -56,6 +66,8 @@ public static class CrashGuardSettings
         NormalizeLogWindowProtectionMode(LogWindowProtectionMode);
 
     public static bool ShouldSkipNoOpCreatureHeal => SkipNoOpCreatureHeal;
+
+    public static bool ShouldGuardSentryNativeShutdown => GuardSentryNativeShutdown;
 
     private static string NormalizeLogWindowProtectionMode(string? mode)
     {

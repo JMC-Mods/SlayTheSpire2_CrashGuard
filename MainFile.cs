@@ -37,6 +37,14 @@ public partial class MainFile : Node
         {
             ModLogger.Error($"安装无效治疗指令防崩补丁失败，已跳过该补丁以避免 MOD 加载失败：{ex}");
         }
+        try
+        {
+            CrashGuard.Patches.SentryNativeShutdownGuardPatch.Apply(harmony);
+        }
+        catch (Exception ex)
+        {
+            ModLogger.Error($"安装 Sentry 原生关闭防崩补丁失败，已跳过该补丁以避免 MOD 加载失败：{ex}");
+        }
 
         ModLogger.Info("Harmony 补丁已应用。");
     }
