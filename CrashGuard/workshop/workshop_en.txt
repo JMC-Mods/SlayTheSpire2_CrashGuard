@@ -1,7 +1,7 @@
 [h1] Special Notice [/h1]
 [b] If your saves disappear after installing mods, subscribe to [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3747533700] BetterSaveSlots [/url], then click the Import button on the save slot to fix it. Please disable any save-path merging mods before using it. [/b]
 
-[h1] Experimental Fix for Crashes (CrashGuard) [/h1]
+[h1] Experimental Crash Fixes (CrashGuard) [/h1]
 [h2] 1. Overview [/h2]
 Recently, someone in the group reported extremely frequent game crashes. Initial debugging suggests that the issue is related to BaseLib's log trimming, while the further upstream cause may be related to Godot controls. This MOD is an experimental attempt to fix that crash issue.
 
@@ -9,13 +9,23 @@ By default, it completely disables BaseLib log refresh. The cost is that BaseLib
 
 You can also change the setting to try a minimal fix that preserves refresh. The cost is that logs will no longer be trimmed, and the log window may become very laggy. I personally cannot reproduce this crash at all, and currently only have this one sample. If you still crash while using this MOD, you are welcome to join the group or Discord and provide more samples.
 
+[hr][/hr]
+
+Recently, a player reported a freeze around the Ancient encounter. Initial investigation suggested that certain improper implementations in Hextech Runes could be triggered by some other mods. After adding a defensive patch for this kind of behavior, that player was able to run the game successfully. In theory this may avoid a series of related bugs. In very rare cases, however, some mod authors may intentionally use an improper function for a special purpose, more specifically using a heal function instead of a damage function to implement damage, and this may affect that behavior.
+
+[hr][/hr]
+
+Recently, another player reported a 100% crash when loading mods. Initial investigation suggested that the game may trigger a native crash in some environments when it disables Sentry during modded startup. After adding a fix for that path, the player was able to enter the game successfully. RitsuLib also includes a similar fix, and this MOD is designed to avoid conflicts with it.
+
+[hr][/hr]
+
+All features in this MOD are intended to be backward-compatible, quiet, and as low-impact as possible. The MOD will keep being updated. By design, even if you are not using the specific mod being guarded against, or if you have never encountered the issue, installing this MOD should not affect you. If a previously guarded problem is later fixed by the game or another mod, CrashGuard will try to fall back safely. Samples of abnormal game behavior are always welcome; I can use them to investigate and add fixes.
+
 [url=https://github.com/JMC-Mods/SlayTheSpire2_CrashGuard] GitHub Repository [/url]
 
 [h2] 2. Features [/h2]
 [list]
-    [*] Disables BaseLib's built-in log window refresh by default to try to avoid frequent crashes
-    [*] Allows switching in the settings to an experimental mode that preserves refresh and only skips old-log trimming
-    [*] Provides a BaseLib log window protection mode configuration
+    [*] Provides a set of configurable crash guards that can be toggled individually
 [/list]
 
 [h2] 3. Notes [/h2]
